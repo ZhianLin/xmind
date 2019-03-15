@@ -1,3 +1,4 @@
+
 # XMind
 
 ![mind_mapping](https://raw.githubusercontent.com/zhuifengshen/xmind/master/images/xmind.png)
@@ -6,6 +7,7 @@
 
 
 ### 一、安装方式
+- Python版本:>3.0
 ```
 pip3 install XMind  
 
@@ -24,7 +26,7 @@ pip3 install -U XMind
 ### 三、使用方式
 
 #### 1、创建XMind文件
-```
+```python
 def gen_my_xmind_file():  
     # 1、如果指定的XMind文件存在，则加载，否则创建一个新的
     workbook = xmind.load("my.xmind")
@@ -43,7 +45,7 @@ def gen_my_xmind_file():
 
 ![first sheet](https://raw.githubusercontent.com/zhuifengshen/xmind/master/images/first_sheet.png)
 
-```
+```python
 def design_sheet1(sheet1):
     # ***** 第一个画布 *****
     sheet1.setTitle("first sheet")  # 设置画布名称
@@ -77,7 +79,7 @@ def design_sheet1(sheet1):
 
 ![second sheet](https://raw.githubusercontent.com/zhuifengshen/xmind/master/images/second_sheet.png)
 
-```
+```python
 def gen_sheet2(workbook, sheet1):
     # ***** 设计第二个画布 *****
     sheet2 = workbook.createSheet()
@@ -149,7 +151,7 @@ def gen_sheet2(workbook, sheet1):
 #### 2、解析XMind文件
 
 ##### (1) 将XMind文件转换为Dict数据 / JSON数据
-```
+```python
 import xmind
 workbook = xmind.load('demo.xmind')
 print(workbook.getData())
@@ -320,7 +322,7 @@ Output:
 ```
 
 ##### （2）将画布转换为Dict数据
-```
+```python
 import xmind
 workbook = xmind.load('demo.xmind')
 sheet = workbook.getPrimarySheet()
@@ -394,7 +396,7 @@ Output:
 ```
 
 ##### (3) 将主题转换为Dict数据
-```
+```python
 import xmind
 workbook = xmind.load('demo.xmind')
 sheet = workbook.getPrimarySheet()
@@ -465,7 +467,7 @@ Output:
 ```
 
 ##### (4) 自定义解析
-```
+```python
 import xmind
 workbook = xmind.load('demo.xmind')
 custom_parse_xmind(workbook)
@@ -522,7 +524,7 @@ Relationship: [redirection to the first sheet] --> [topic with an url hyperlink]
 #### 3、更新保存XMind文件
 
 ##### （1）五种保存方法
-```
+```python
 import xmind
 # 加载XMind文件demo.xmind
 workbook = xmind.load('demo.xmind')  
